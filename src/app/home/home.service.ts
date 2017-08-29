@@ -12,7 +12,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { extractData, handleError } from '../shared/http-helper';
 import { HttpService } from '../shared/http.service';
 
 @Injectable()
