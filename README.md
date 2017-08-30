@@ -55,24 +55,21 @@ To use this sample, you need the following:
 
 ## Build and run the sample
 
-1. Download or clone the Microsoft REST Calendar Event and Excel Sample for Angular 4.
+1. Using your favorite IDE, open **configs.ts** in *src/app/shared*.
 
-2. Using your favorite IDE, open **configs.ts** in *src/app/shared*.
+2. Replace the **ENTER_YOUR_CLIENT_ID** placeholder value with the application ID of your registered Azure application.
 
-3. Replace the **ENTER_YOUR_CLIENT_ID** placeholder value with the application ID of your registered Azure application.
-
-4. In a command prompt, run the following command in the root directory: `npm install`. This installs project dependencies, including the [HelloJS](http://adodson.com/hello.js/) client-side authentication library.
-
+3. In a command prompt, run the following command in the root directory: `npm install`. This installs project dependencies, including the [HelloJS](http://adodson.com/hello.js/) client-side authentication library and the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript).
   
-5. Run `npm start` to start the development server.
+4. Run `npm start` to start the development server.
 
-6. Navigate to [http://localhost:4200/](http://localhost:4200/) in your web browser.
+5. Navigate to [http://localhost:4200/](http://localhost:4200/) in your web browser.
 
-7. Choose the **Sign in with your Microsoft account** button.
+6. Choose the **Sign in with your Microsoft account** button.
 
-8. Sign in with your personal or work or school account and grant the requested permissions.
+7. Sign in with your personal or work or school account and grant the requested permissions.
 
-9. Click the **Write to Excel** button. Verify that the rows have been added to the **demo.xslx** file that you uploaded to your root OneDrive folder.
+8. Click the **Write to Excel** button. Verify that the rows have been added to the **demo.xslx** file that you uploaded to your root OneDrive folder.
 
 
 ## Contributing
