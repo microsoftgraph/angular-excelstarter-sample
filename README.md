@@ -1,4 +1,4 @@
-# Microsoft REST Calendar Event and Excel Sample for Angular 4
+# Microsoft Graph REST Calendar Event and Excel Sample for Angular 4
 
 ## Table of contents
 
