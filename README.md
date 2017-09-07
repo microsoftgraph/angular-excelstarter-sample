@@ -1,4 +1,4 @@
-# Microsoft Graph REST Calendar Event and Excel Sample for Angular 4
+# Microsoft Graph Calendar Event and Excel Sample for Angular 4
 
 ## Table of contents
 
@@ -13,7 +13,7 @@
 
 ## Introduction
 
-This sample shows how to connect an Angular 4.0 app to a Microsoft work or school (Azure Active Directory) using the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/) to get a user's calendar events and upload information about them to an Excel file stored in OneDrive.
+This sample shows how to connect an Angular 4.0 app to a Microsoft work or school (Azure Active Directory) using the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/) with the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript) to get a user's calendar events and upload information about them to an Excel file stored in OneDrive.
 
 ![image](https://user-images.githubusercontent.com/3375461/28985978-e5d3ea26-7919-11e7-8a69-a52bccd3f46b.png)
 
@@ -49,30 +49,27 @@ To use this sample, you need the following:
 
 6. Choose **Web**.
 
-7. Make sure the **Allow Implicit Flow** check box is selected, and enter *http://localhost:8080/login* as the Redirect URI. 
+7. Make sure the **Allow Implicit Flow** check box is selected, and enter *http://localhost:4200/* as the Redirect URI. 
 
 8. Choose **Save**.
 
 ## Build and run the sample
 
-1. Download or clone the Microsoft REST Calendar Event and Excel Sample for Angular 4.
+1. Using your favorite IDE, open **configs.ts** in *src/app/shared*.
 
-2. Using your favorite IDE, open **configs.ts** in *src/app/shared*.
+2. Replace the **ENTER_YOUR_CLIENT_ID** placeholder value with the application ID of your registered Azure application.
 
-3. Replace the **ENTER_YOUR_CLIENT_ID** placeholder value with the application ID of your registered Azure application.
-
-4. In a command prompt, run the following command in the root directory: `npm install`. This installs project dependencies, including the [HelloJS](http://adodson.com/hello.js/) client-side authentication library.
-
+3. In a command prompt, run the following command in the root directory: `npm install`. This installs project dependencies, including the [HelloJS](http://adodson.com/hello.js/) client-side authentication library and the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript).
   
-5. Run `npm start` to start the development server.
+4. Run `npm start` to start the development server.
 
-6. Navigate to [http://localhost:4200/](http://localhost:4200/) in your web browser.
+5. Navigate to [http://localhost:4200/](http://localhost:4200/) in your web browser.
 
-7. Choose the **Sign in with your Microsoft account** button.
+6. Choose the **Sign in with your Microsoft account** button.
 
-8. Sign in with your personal or work or school account and grant the requested permissions.
+7. Sign in with your personal or work or school account and grant the requested permissions.
 
-9. Click the **Write to Excel** button. Verify that the rows have been added to the **demo.xslx** file that you uploaded to your root OneDrive folder.
+8. Click the **Write to Excel** button. Verify that the rows have been added to the **demo.xslx** file that you uploaded to your root OneDrive folder.
 
 
 ## Contributing
