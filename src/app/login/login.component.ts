@@ -10,7 +10,11 @@ import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'app-login',
   template: `
-    <button (click)="login()">Login with your Microsoft account</button>
+    <p>
+    <button class="ms-Button" (click)="login()">
+    <span class="ms-Button-label">Login with your Microsoft account</span>
+    </button>
+    </p>
   `
 })
 export class LoginComponent {

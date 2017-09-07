@@ -13,6 +13,7 @@ import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'app-home',
   template: `
+    <div class="ms-font-m">
     <table>
       <tr>
         <th align="left">Subject</th>
@@ -23,10 +24,15 @@ import { AuthService } from '../auth/auth.service';
         <td>{{event.organizer.emailAddress.address}}</td>
       </tr>
     </table>
-    <button (click)="onAddEventToExcel()">Write to Excel</button>
-    <button (click)="onLogout()">Logout</button>    
-    <div *ngIf="this.excelRequestSucceeded">    
-        <p class="ms-font-m ms-fontColor-green">Successfully updated demo.xslx</p>
+    </div>
+    <button class="ms-Button" (click)="onAddEventToExcel()">
+    <span class="ms-Button-label">Write to Excel</span>
+    </button>
+    <button class="ms-Button" (click)="onLogout()">
+    <span class="ms-Button-label">Logout</span>
+    </button>    
+    <div class="ms-font-m ms-fontColor-green" *ngIf="this.excelRequestSucceeded">    
+        <p >Successfully updated demo.xslx</p>
     </div>
   `
 })
