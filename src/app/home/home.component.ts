@@ -24,7 +24,10 @@ import { AuthService } from '../auth/auth.service';
       </tr>
     </table>
     <button (click)="onAddEventToExcel()">Write to Excel</button>
-    <button (click)="onLogout()">Logout</button>
+    <button (click)="onLogout()">Logout</button>    
+    <div *ngIf="this.excelRequestSucceeded">    
+        <p class="ms-font-m ms-fontColor-green">Successfully updated demo.xslx</p>
+    </div>
   `
 })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -33,6 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   subsGetEvents: Subscription;
   subsAddContactToExcel: Subscription;
   subsAddEventToExcel: Subscription;
+  excelRequestSucceeded: Boolean;
 
   constructor(
     private homeService: HomeService,
@@ -51,6 +55,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onAddEventToExcel() {
     this.subsAddEventToExcel = this.homeService.addEventToExcel(this.events).subscribe();
+    if (this.events.length > 0 )
+      {
+        this.excelRequestSucceeded = true;
+      }
   }
 
   onLogout() {
