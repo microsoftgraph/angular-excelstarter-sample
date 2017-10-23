@@ -14,14 +14,14 @@ import { AuthService } from '../auth/auth.service';
   selector: 'app-home',
   template: `
     <div class="ms-font-m">
-    <table>
+    <table *ngIf="user">
       <tr>
-        <th align="left">Subject</th>
-        <th align="left">Organizer Email</th>
+        <th align="left">User Name</th>
+        <th align="left">User Email</th>
       </tr>
-      <tr *ngFor="let event of events">
-        <td>{{event.subject}}</td>
-        <td>{{event.organizer.emailAddress.address}}</td>
+      <tr>
+        <td>{{user.displayName}}</td>
+        <td>{{user.mail || user.userPrincipalName}}</td>
       </tr>
     </table>
     </div>
@@ -37,11 +37,9 @@ import { AuthService } from '../auth/auth.service';
   `
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  events: MicrosoftGraph.Event[];
-  subsGetUsers: Subscription;
-  subsGetEvents: Subscription;
-  subsAddContactToExcel: Subscription;
-  subsAddEventToExcel: Subscription;
+  user: MicrosoftGraph.User;
+  subsGetMe: Subscription;
+  subsAddInfoToExcel: Subscription;
   excelRequestSucceeded: Boolean;
 
   constructor(
@@ -50,18 +48,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.subsGetEvents = this.homeService.getEvents().subscribe(events => this.events = events);
+    this.subsGetMe = this.homeService.getMe().subscribe(user => this.user = user);
   }
 
   ngOnDestroy() {
-    this.subsGetUsers.unsubscribe();
-    this.subsAddContactToExcel.unsubscribe();
-    this.subsAddEventToExcel.unsubscribe();
+    this.subsGetMe.unsubscribe();
+    this.subsAddInfoToExcel.unsubscribe();
   }
 
   onAddEventToExcel() {
-    this.subsAddEventToExcel = this.homeService.addEventToExcel(this.events).subscribe();
-    if (this.events.length > 0 )
+    this.subsAddInfoToExcel = this.homeService.addInfoToExcel(this.user).subscribe();
+    if (this.user.directReports != null )
       {
         this.excelRequestSucceeded = true;
       }

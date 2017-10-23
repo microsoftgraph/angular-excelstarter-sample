@@ -35,35 +35,35 @@ export class HomeService {
     return client;
   }
 
-  getEvents(): Observable<MicrosoftGraph.Event[]> {
-    
+  getMe(): Observable<MicrosoftGraph.User>
+  {
     var client = this.getClient();
-    
     return Observable.fromPromise(client
-    .api('me/events')
-    .select("subject,organizer")
+    .api('me')
+    .select("displayName, mail, userPrincipalName")
     .get()
     .then ((res => {
-      return res.value;
+      return res;
     } ) )
     );
-
   }
 
-  addEventToExcel(events: MicrosoftGraph.Event[]) {
-    const calendarEvents = [];
 
-    events.forEach(event => {
-      calendarEvents.push([event.subject, event.organizer.emailAddress.address]);
-    });   
+  addInfoToExcel(user: MicrosoftGraph.User) {
+    const userInfo = [];
+    const userEmail = user.mail || user.userPrincipalName;
 
-    const calendarEventRequestBody = {
+
+    userInfo.push([user.displayName, userEmail]);
+
+
+    const userInfoRequestBody = {
       index: null,
-      values: calendarEvents
+      values: userInfo
     };
 
 
-    const body = JSON.stringify(calendarEventRequestBody);
+    const body = JSON.stringify(userInfoRequestBody);
 
     var client = this.getClient();
     var url = `${this.url}/me/drive/root:/${this.file}:/workbook/tables/${this.table}/rows/add`
