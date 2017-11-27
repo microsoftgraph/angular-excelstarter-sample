@@ -1,4 +1,4 @@
-# Microsoft Graph Calendar Event and Excel Sample for Angular 4
+# Microsoft Graph Excel Starter Sample for Angular 4
 
 ## Table of contents
 
