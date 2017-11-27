@@ -6,22 +6,21 @@
 * [Prerequisites](#prerequisites)
 * [Register the application](#register-the-application)
 * [Build and run the sample](#build-and-run-the-sample)
-* [Code of note](#code-of-note)
 * [Questions and comments](#questions-and-comments)
 * [Contributing](#contributing)
 * [Additional resources](#additional-resources)
 
 ## Introduction
 
-This sample shows how to connect an Angular 4.0 app to a Microsoft work or school (Azure Active Directory) using the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/) with the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript) to get a user's calendar events and upload information about them to an Excel file stored in OneDrive.
+This sample shows how to connect an Angular 4.0 app to a Microsoft work or school (Azure Active Directory) using the [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/) with the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript) to get information about the signed-in user and upload that information to an Excel file stored in OneDrive.
 
 ![image](https://user-images.githubusercontent.com/3375461/28985978-e5d3ea26-7919-11e7-8a69-a52bccd3f46b.png)
 
-Once you authenticate and authorize the application, it gets one page of events from the user's calendar.
+Once you authenticate and authorize the application, it gets the signed-in user's name and email address.
 
 ![image](readme-images/Angular4ScreenShot.png)
 
-When you click the **Write to Excel** button, the application writes the contacts to an Excel file stored in the user's root OneDrive folder.
+When you click the **Write to Excel** button, the application writes the user information to an Excel file stored in the user's root OneDrive folder.
 
 ![image](readme-images/ExcelScreenShot.png)
 
