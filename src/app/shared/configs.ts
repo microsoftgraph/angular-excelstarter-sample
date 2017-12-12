@@ -5,5 +5,5 @@
 
 export const Configs = {
   appId: 'ENTER_YOUR_CLIENT_ID',
-  scope: 'Calendars.Read Files.Readwrite'
+  scope: 'Calendars.Read Files.Readwrite User.Read'
 };
