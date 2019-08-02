@@ -1,3 +1,19 @@
+---
+page_type: sample
+products:
+- office-excel
+- office-onedrive
+languages:
+- typescript
+extensions:
+  contentType: samples
+  technologies:
+  - Mcirosoft Graph
+  - Microsoft identity platform
+  platforms:
+  - AngularJS
+  createdDate: 8/28/2017 3:55:43 PM
+---
 # Microsoft Graph Excel Starter Sample for Angular 4
 
 ## Table of contents
