@@ -6,7 +6,7 @@ products:
 languages:
 - typescript
 extensions:
-  contentType: samples
+  contentType: samples 
   technologies:
   - Mcirosoft Graph
   - Microsoft identity platform
