@@ -1,21 +1,10 @@
----
-page_type: sample
-products:
-- office-excel
-- office-onedrive
-languages:
-- typescript
-description: "This sample shows how to connect an Angular 4.0 app to a Microsoft work or school account using the Microsoft Graph API."
-extensions:
-  contentType: samples 
-  technologies:
-  - Mcirosoft Graph
-  - Microsoft identity platform
-  platforms:
-  - AngularJS
-  createdDate: 8/28/2017 3:55:43 PM
----
 # Microsoft Graph Excel Starter Sample for Angular 4
+
+## IMPORTANT
+
+**This project is being archived and replaced with the [Build Angular single-page apps with the Microsoft Graph SDK training](https://github.com/microsoftgraph/msgraph-training-angularspa). As part of the archival process, we're closing all open issues and pull requests.**
+
+**You can continue to use this sample "as-is", but it won't be maintained moving forward. We apologize for any inconvenience.**
 
 ## Table of contents
 
